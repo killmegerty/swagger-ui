@@ -107,10 +107,10 @@ export default class Topbar extends React.Component {
     let inputStyle = {}
     if(isFailed) inputStyle.color = "red"
     if(isLoading) inputStyle.color = "#aaa"
-
-    const { urls } = getConfigs()
+    const { urls, custom_url } = getConfigs()
     let control = []
     let formOnSubmit = null
+
 
     if(urls) {
       let rows = []
@@ -119,12 +119,18 @@ export default class Topbar extends React.Component {
       })
 
       control.push(
-        <label className="select-label" htmlFor="select"><span>Select a definition</span>
-          <select id="select" disabled={isLoading} onChange={ this.onUrlSelect } value={urls[this.state.selectedIndex].url}>
+        <label className="select-label" htmlFor="select"><span>Select a specification</span>
+          <select id="select" disabled={isLoading} onChange={ this.onUrlSelect } onClick={ this.onUrlSelect } value={urls[this.state.selectedIndex].url}>
             {rows}
           </select>
         </label>
       )
+
+      if (custom_url) {
+        formOnSubmit = this.downloadUrl
+        control.push(<input className="download-url-input" type="text" onChange={ this.onUrlChange } value={this.state.url} style={inputStyle} />)
+        control.push(<Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>)
+      }
     }
     else {
       formOnSubmit = this.downloadUrl
@@ -136,9 +142,7 @@ export default class Topbar extends React.Component {
       <div className="topbar">
         <div className="wrapper">
           <div className="topbar-wrapper">
-            <Link>
-              <img height="40" src={ Logo } alt="Swagger UI"/>
-            </Link>
+            <h2>API docs</h2>
             <form className="download-url-wrapper" onSubmit={formOnSubmit}>
               {control.map((el, i) => cloneElement(el, { key: i }))}
             </form>

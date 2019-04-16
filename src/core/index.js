@@ -32,6 +32,7 @@ module.exports = function SwaggerUI(opts) {
     spec: {},
     url: "",
     urls: null,
+    custom_url: false,
     layout: "BaseLayout",
     docExpansion: "list",
     maxDisplayedTags: null,
