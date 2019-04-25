@@ -1,13 +1,18 @@
 .topbar
 {
+    .topbar-wrapper {
+      display: flex;
+      justify-content: space-between;
+      form {
+        margin-top: 10px;
+      }
+    }
+    h2, p {
+      color: #f0f0f0;
+    }
     padding: 10px 0;
 
     background-color: $topbar-background-color;
-    .topbar-wrapper
-    {
-        display: flex;
-        align-items: center;
-    }
     a
     {
         font-size: 1.5em;
@@ -32,13 +37,10 @@
 
     .download-url-wrapper
     {
-        display: flex;
-        flex: 3;
-        justify-content: flex-end;
 
         input[type=text]
         {
-            width: 100%;
+            min-width: 300px;
             margin: 0;
 
             border: 2px solid $topbar-download-url-wrapper-element-border-color;
@@ -48,8 +50,7 @@
 
         .select-label
         {
-            display: flex;
-            align-items: center;
+            display: inline-block;
 
             width: 100%;
             max-width: 600px;
@@ -57,6 +58,7 @@
             color: #f0f0f0;
             span
             {
+                min-width: 100px;
                 font-size: 16px;
 
                 flex: 1;
@@ -70,7 +72,7 @@
             {
                 flex: 2;
 
-                width: 100%;
+                min-width: 300px;
 
                 border: 2px solid $topbar-download-url-wrapper-element-border-color;
                 outline: none;
@@ -81,7 +83,8 @@
 
         .download-url-button
         {
-            font-size: 16px;
+            height: 33px;
+            font-size: 13px;
             font-weight: bold;
 
             padding: 4px 30px;

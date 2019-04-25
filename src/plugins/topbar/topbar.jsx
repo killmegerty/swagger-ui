@@ -128,8 +128,13 @@ export default class Topbar extends React.Component {
 
       if (custom_url) {
         formOnSubmit = this.downloadUrl
-        control.push(<input className="download-url-input" type="text" onChange={ this.onUrlChange } value={this.state.url} style={inputStyle} />)
-        control.push(<Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>)
+        control.push(<p>OR</p>)
+        control.push(
+          <label className="select-label" htmlFor="input"><span>Use custom</span>
+            <input className="download-url-input" type="text" onChange={ this.onUrlChange } value={this.state.url} style={inputStyle} />
+            <Button className="download-url-button" onClick={ this.downloadUrl }>Explore</Button>
+          </label>
+        )
       }
     }
     else {
