@@ -1,5 +1,11 @@
 .topbar
 {
+    .how-to {
+      font-size: 15px;
+      text-decoration: underline;
+      max-width: none;
+      width: 60px;
+    }
     .topbar-wrapper {
       display: flex;
       justify-content: space-between;

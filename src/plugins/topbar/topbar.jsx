@@ -147,7 +147,7 @@ export default class Topbar extends React.Component {
       <div className="topbar">
         <div className="wrapper">
           <div className="topbar-wrapper">
-            <h2>API docs</h2>
+            <h2>API docs <a className="how-to" href="how-to.html">How to</a></h2>
             <form className="download-url-wrapper" onSubmit={formOnSubmit}>
               {control.map((el, i) => cloneElement(el, { key: i }))}
             </form>
