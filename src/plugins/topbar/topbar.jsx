@@ -120,7 +120,7 @@ export default class Topbar extends React.Component {
 
       control.push(
         <label className="select-label" htmlFor="select"><span>Select a specification</span>
-          <select id="select" disabled={isLoading} onChange={ this.onUrlSelect } onClick={ this.onUrlSelect } value={urls[this.state.selectedIndex].url}>
+          <select id="select" disabled={isLoading} onChange={ this.onUrlSelect } value={urls[this.state.selectedIndex].url}>
             {rows}
           </select>
         </label>
